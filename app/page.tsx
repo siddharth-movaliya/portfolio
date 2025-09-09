@@ -1,3 +1,4 @@
+import FooterSection from '@/components/footer/footer-section';
 import HeroSection from '@/components/hero/hero-section';
 import NavigationMenu from '@/components/navigation/navigation-menu';
 import TechStackSection from '@/components/tech-stack/tech-stack-section';
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <WorkSection />
       <TechStackSection />
+      <FooterSection />
     </>
   );
 }

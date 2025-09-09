@@ -119,6 +119,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  body::-webkit-scrollbar {
+    @apply hidden;
+  }
 }
 
 @layer utilities {
@@ -132,6 +136,39 @@
 
   .animate-reverse-spin {
     @apply animate-[spinReverse_4s_linear_infinite];
+  }
+
+  /* Layered Blur Effect for Footer */
+  .layer1 {
+    @apply z-1 mask-linear-[to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_12.5%,rgba(0,0,0,1)_25%,rgba(0,0,0,0)_37.5%] backdrop-blur-[0.125px];
+  }
+
+  .layer2 {
+    @apply z-2 mask-linear-[to_bottom,rgba(0,0,0,0)_12.5%,rgba(0,0,0,1)_25%,rgba(0,0,0,1)_37.5%,rgba(0,0,0,0)_50%] backdrop-blur-[0.25px];
+  }
+
+  .layer3 {
+    @apply z-3 mask-linear-[to_bottom,rgba(0,0,0,0)_25%,rgba(0,0,0,1)_37.5%,rgba(0,0,0,1)_50%,rgba(0,0,0,0)_62.5%] backdrop-blur-[0.5px];
+  }
+
+  .layer4 {
+    @apply z-4 mask-linear-[to_bottom,rgba(0,0,0,0)_37.5%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_62.5%,rgba(0,0,0,0)_75%] backdrop-blur-[1px];
+  }
+
+  .layer5 {
+    @apply z-5 mask-linear-[to_bottom,rgba(0,0,0,0)_50%,rgba(0,0,0,1)_62.5%,rgba(0,0,0,1)_75%,rgba(0,0,0,0)_87.5%] backdrop-blur-[2px];
+  }
+
+  .layer6 {
+    @apply z-6 mask-linear-[to_bottom,rgba(0,0,0,0)_62.5%,rgba(0,0,0,1)_75%,rgba(0,0,0,1)_87.5%,rgba(0,0,0,0)_100%] backdrop-blur-[4px];
+  }
+
+  .layer7 {
+    @apply z-7 mask-linear-[to_bottom,rgba(0,0,0,0)_75%,rgba(0,0,0,1)_87.5%,rgba(0,0,0,1)_100%] backdrop-blur-[8px];
+  }
+
+  .layer8 {
+    @apply z-8 mask-linear-[to_bottom,rgba(0,0,0,0)_87.5%,rgba(0,0,0,1)_100%] backdrop-blur-[16px];
   }
 
   @keyframes spinReverse {

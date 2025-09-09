@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { RiTwitterXFill } from 'react-icons/ri';
 import MagneticButton from '../ui/magnetic-button';
 import Link from 'next/link';
 
@@ -24,18 +25,18 @@ const NavigationMenuSocials = () => {
         </MagneticButton>
         <MagneticButton>
           <Link
-            href={'https://twitter.com/siddharth_2382'}
-            aria-label="Twitter"
+            href={'https://x.com/siddharth_2382'}
+            aria-label="X.com / Twitter"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-background flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow"
           >
-            <FaTwitter />
+            <RiTwitterXFill />
           </Link>
         </MagneticButton>
         <MagneticButton>
           <Link
-            href={'https://github.com/siddharth-2382'}
+            href={'https://github.com/siddharth-movaliya/'}
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"

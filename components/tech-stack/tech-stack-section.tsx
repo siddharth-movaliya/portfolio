@@ -124,7 +124,7 @@ const TechStackSection = () => {
 
   return (
     <div
-      className="relative flex h-screen flex-col justify-between p-12"
+      className="relative flex flex-col justify-between p-12"
       ref={containerRef}
     >
       <h1
@@ -139,7 +139,7 @@ const TechStackSection = () => {
         className="bg-foreground pointer-events-none absolute z-0 p-1 transition-all duration-300"
         style={hoverStyle || {}}
       />
-      <div className="relative">
+      <div className="relative mt-20">
         <p className="mb-6 text-lg font-semibold uppercase">Professional at</p>
 
         {/* Top row */}
