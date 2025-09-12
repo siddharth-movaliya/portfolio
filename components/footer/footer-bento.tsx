@@ -14,7 +14,7 @@ const FooterBento = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText('movaliyasiddharth23@gmail.com');
+    await navigator.clipboard.writeText('contact@siddharthmovaliya.com');
     setCopied(true);
     toast.success('Email copied to clipboard!');
     setTimeout(() => setCopied(false), 2000); // revert after 2s
@@ -138,7 +138,7 @@ const FooterBento = () => {
               onClick={handleCopy}
               className="text-background relative flex w-fit items-center pr-2 transition-all duration-400 ease-in-out hover:cursor-pointer hover:text-sky-400 2xl:text-lg"
             >
-              movaliyasiddharth23@gmail.com
+              contact@siddharthmovaliya.com
               <MdCopyAll
                 className={`absolute right-0 translate-x-full text-xl transition-all duration-300 ${
                   copied

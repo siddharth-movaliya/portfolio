@@ -33,8 +33,8 @@ const HeroSection = () => {
         <p>
           Email:
           <br />
-          <Link href="mailto:movaliyasiddharth23@gmail.com">
-            movaliyasiddharth23@gmail.com
+          <Link href="mailto:contact@siddharthmovaliya.com">
+            contact@siddharthmovaliya.com
           </Link>
         </p>
         <Image
