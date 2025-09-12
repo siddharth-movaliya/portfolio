@@ -16,7 +16,7 @@ const FooterSection = () => {
   return (
     <div className="bg-foreground text-background mt-4 w-full rounded-t-[64px] pt-12 md:mt-16 xl:pt-16 2xl:pt-24">
       <div className="flex flex-col justify-between gap-4">
-        <div className="flex flex-col justify-center px-8 md:px-12">
+        <div className="flex flex-col justify-center px-8 md:flex-row md:px-12">
           <div className="m-6 text-4xl md:text-5xl xl:w-4/5 xl:text-7xl 2xl:w-5/7 2xl:text-8xl">
             Have an{' '}
             <span className={cn('italic', bodoni.className)}>MVP Idea</span>?
