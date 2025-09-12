@@ -7,18 +7,16 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <div className="m-12 flex h-[80vh] flex-col">
-      <div className="relative flex items-center justify-center">
+    <div className="xs:h-[88vh] mx-4 my-auto flex h-[105vh] flex-col min-[769px]:h-[90vh] sm:h-[87vh] md:mx-6 lg:mx-10 lg:h-[90vh] xl:h-[82vh] 2xl:m-12 2xl:h-[80vh]">
+      <div className="xs:mt-20 relative mt-16 flex items-center justify-center min-[1367px]:mt-0! md:my-auto">
         <HeroText />
         <PixelatedImage
-          width={360}
-          height={480}
           src="/siddharth-movaliya.JPG"
-          className="absolute inset-0 top-44 left-0"
+          className="xs:-left-8 absolute inset-0 top-40 -left-10 translate-x-1/2 sm:top-56 sm:left-0 md:top-36 md:translate-x-0 lg:top-38 xl:top-40 2xl:top-44"
         />
         <ImageRevealSpinner />
-        <div className="absolute right-0">
-          <div className="relative mr-12 mb-12 font-medium">
+        <div className="xs:-top-20 absolute -top-16 right-0 sm:-top-16 md:top-0 lg:top-4 xl:top-16">
+          <div className="relative mb-12 font-medium sm:mr-12">
             <Image
               src="/asterisk.svg"
               alt="Asterisk"
@@ -31,7 +29,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="mt-auto flex w-full justify-between">
+      <div className="mt-auto flex w-full flex-col gap-6 md:flex-row md:justify-between md:gap-0">
         <p>
           Email:
           <br />
@@ -44,9 +42,9 @@ const HeroSection = () => {
           alt="Downward Arrow"
           width={44}
           height={44}
-          className="animate-bounce text-white mix-blend-difference"
+          className="animate-bounce self-center text-white mix-blend-difference md:self-auto"
         />
-        <p>
+        <p className="self-end md:self-auto">
           Passionate about crafting <br />
           unforgettable experiences.
         </p>

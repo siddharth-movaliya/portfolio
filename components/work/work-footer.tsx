@@ -82,16 +82,14 @@ const WorkFooter = () => {
   };
 
   const dots = [
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'bg-background h-52 w-76 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
-    'dark bg-border size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'bg-background size-18 md:size-36 lg:h-36 xl:h-48 w-32 md:w-76 2xl:h-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
+    'dark bg-border size-18 md:size-36 lg:size-36 xl:size-48 2xl:size-52 rounded-full',
   ];
 
   return (
@@ -101,7 +99,7 @@ const WorkFooter = () => {
         ref={dotsContainerRef}
         className="dots-container mt-16 w-[200%] will-change-transform"
       >
-        <div className="flex -translate-x-24 gap-5">
+        <div className="flex -translate-x-24 gap-3 md:gap-5">
           {dots.map((cls, i) => (
             <div
               key={i}
@@ -117,25 +115,25 @@ const WorkFooter = () => {
       </div>
 
       {/* Text */}
-      <div className="m-16 text-[200px] leading-none font-light uppercase">
+      <div className="my-16 text-5xl leading-none font-light uppercase md:m-16 md:text-7xl lg:text-8xl xl:text-[160px] 2xl:text-[200px]">
         <div ref={makeAllRef} className="text-right will-change-transform">
           <span className={cn('italic', bodoni.className)}>Make</span>
-          <span className="mx-32">All</span>
+          <span className="mx-12 md:mx-24 lg:mx-32">All</span>
         </div>
         <div className="text-center">Your Dreams</div>
         <div
           ref={comeTrueRef}
           className={cn(
-            'relative mx-24 w-fit italic will-change-transform',
+            'relative mx-auto w-fit italic will-change-transform lg:mx-24',
             bodoni.className
           )}
         >
-          <span className='after:absolute after:top-0 after:right-0 after:size-10 after:translate-x-2/1 after:bg-[url("/asterisk.svg")] after:bg-contain after:bg-no-repeat'>
+          <span className='after:absolute after:top-0 after:right-0 after:size-4 after:translate-x-2/1 after:bg-[url("/asterisk.svg")] after:bg-contain after:bg-no-repeat after:md:size-10'>
             Come True
           </span>
         </div>
       </div>
-      <p className="relative mx-48 w-[25vw] max-w-70 font-bold">
+      <p className="relative mx-12 md:mx-32 md:w-[37vw] md:font-bold lg:mx-48 lg:w-[25vw] lg:max-w-70">
         As long as your dreams revolve around something like; being the proud
         owner of a spectacular website.
         <span

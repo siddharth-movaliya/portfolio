@@ -120,16 +120,14 @@ const Work = () => {
   const currentIndex = hoveredWorkIndex ?? activeWorkIndex ?? 0;
 
   return (
-    <div className="text-background mx-32">
+    <div className="text-background lg:mx-16 xl:mx-24 2xl:mx-32">
       {hasMoved && (
         <div
-          className="cursor-effect bg-ring pointer-events-none fixed z-50 h-0 w-0 overflow-hidden transition-transform duration-600 ease-in-out"
+          className="cursor-effect bg-ring pointer-events-none fixed z-50 overflow-hidden transition-transform duration-600 ease-in-out xl:h-[420px] xl:w-[420px] 2xl:h-[480px] 2xl:w-[480px]"
           style={{
             top: `${lagCursorStyle.top - 250}px`,
             left: `${lagCursorStyle.left - 250}px`,
             transform: `${lagCursorStyle.transform}`,
-            width: '480px',
-            height: '480px',
           }}
         >
           {Object.values(workData).map((workItem, index) => (
@@ -153,7 +151,9 @@ const Work = () => {
         </div>
       )}
 
-      <p className="text-ring mb-12 px-24 text-lg font-light">Recent Work</p>
+      <p className="text-ring mb-6 px-8 text-lg font-light md:px-24 xl:mb-8 2xl:mb-12">
+        Recent Work
+      </p>
 
       {/* Works */}
       <div className="work-wrapper">
@@ -161,7 +161,7 @@ const Work = () => {
           <div
             key={workItem.title}
             className={cn(
-              'border-ring group grid grid-cols-4 items-center gap-12 px-24 py-18 transition-all duration-700 ease-in-out hover:px-16 hover:opacity-75',
+              'border-ring group grid grid-cols-4 items-center px-4 py-6 transition-all duration-700 ease-in-out hover:opacity-75 md:px-12 lg:px-16 lg:py-8 hover:lg:px-10 xl:gap-8 xl:px-16 xl:py-14 hover:xl:px-10 2xl:gap-12 2xl:px-24 2xl:py-18 hover:2xl:px-16',
               index === 0 ? 'border-y' : 'border-b'
             )}
             onMouseEnter={() => setHoveredWorkIndex(index)}
@@ -170,8 +170,8 @@ const Work = () => {
               setActiveWorkIndex(index);
             }}
           >
-            <div className="col-span-3">
-              <h1 className="text-8xl font-light uppercase">
+            <div className="col-span-4 md:col-span-3">
+              <h1 className="text-4xl font-light uppercase lg:text-5xl xl:text-7xl 2xl:text-8xl">
                 <RotatingLink
                   text={
                     workItem.title === 'Nobel Prize Analysis'
@@ -183,11 +183,13 @@ const Work = () => {
                   target="_blank"
                 />
               </h1>
-              <p className="text-ring text-lg font-light capitalize">
+              <p className="text-ring font-light capitalize xl:text-lg">
                 {workItem.description}
               </p>
             </div>
-            <p className="text-lg font-light capitalize">{workItem.role}</p>
+            <p className="hidden font-light capitalize md:block xl:text-lg">
+              {workItem.role}
+            </p>
           </div>
         ))}
       </div>

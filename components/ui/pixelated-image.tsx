@@ -5,13 +5,9 @@ import { useEffect, useRef } from 'react';
 
 const PixelatedImage = ({
   src,
-  width,
-  height,
   className,
 }: {
   src: string;
-  width: number;
-  height: number;
   className?: string;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -20,24 +16,31 @@ const PixelatedImage = ({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // --- Retina scaling ---
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-    ctx.scale(dpr, dpr);
-
     const img = new Image();
     img.src = src;
-    img.crossOrigin = 'anonymous'; // allow external images
+    img.crossOrigin = 'anonymous';
     img.onload = () => {
       imgRef.current = img;
-      drawPixelated(ctx, img, width, height, 45); // start pixelated
+      resizeAndDraw();
+    };
+
+    const resizeAndDraw = () => {
+      if (!canvas || !ctx || !imgRef.current) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+
+      // Retina scaling
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.scale(dpr, dpr);
+
+      drawPixelated(ctx, imgRef.current, w, h, 45);
     };
 
     function drawPixelated(
@@ -56,7 +59,6 @@ const PixelatedImage = ({
       const offCtx = offCanvas.getContext('2d');
       if (!offCtx) return;
 
-      // draw original image downscaled
       offCtx.drawImage(img, 0, 0, smallW, smallH);
 
       ctx.imageSmoothingEnabled = false;
@@ -72,42 +74,55 @@ const PixelatedImage = ({
     ) {
       ctx.imageSmoothingEnabled = true;
       ctx.clearRect(0, 0, w, h);
-      // draw original image scaled properly
       ctx.drawImage(img, 0, 0, w, h);
     }
 
-    // --- Hover events ---
     const handleEnter = () => {
-      if (!imgRef.current) return;
-      drawPixelated(ctx, imgRef.current, width, height, 15);
+      if (!imgRef.current || !canvas) return;
+      const { width: w, height: h } = canvas.getBoundingClientRect();
+
+      drawPixelated(ctx, imgRef.current, w, h, 15);
       setTimeout(() => {
-        drawPixelated(ctx, imgRef.current!, width, height, 30);
-        setTimeout(() => drawSharp(ctx, imgRef.current!, width, height), 200);
+        drawPixelated(ctx, imgRef.current!, w, h, 30);
+        setTimeout(() => drawSharp(ctx, imgRef.current!, w, h), 200);
       }, 200);
     };
 
     const handleLeave = () => {
-      if (!imgRef.current) return;
-      drawPixelated(ctx, imgRef.current, width, height, 30);
+      if (!imgRef.current || !canvas) return;
+      const { width: w, height: h } = canvas.getBoundingClientRect();
+
+      drawPixelated(ctx, imgRef.current, w, h, 30);
       setTimeout(() => {
-        drawPixelated(ctx, imgRef.current!, width, height, 15);
-        setTimeout(
-          () => drawPixelated(ctx, imgRef.current!, width, height, 45),
-          200
-        );
+        drawPixelated(ctx, imgRef.current!, w, h, 15);
+        setTimeout(() => drawPixelated(ctx, imgRef.current!, w, h, 45), 200);
       }, 200);
     };
+
+    // Observe resize (for responsive Tailwind breakpoints)
+    const observer = new ResizeObserver(resizeAndDraw);
+    observer.observe(canvas);
 
     canvas.addEventListener('mouseenter', handleEnter);
     canvas.addEventListener('mouseleave', handleLeave);
 
     return () => {
+      observer.disconnect();
       canvas.removeEventListener('mouseenter', handleEnter);
       canvas.removeEventListener('mouseleave', handleLeave);
     };
-  }, [src, width, height]);
+  }, [src]);
 
-  return <canvas ref={canvasRef} className={cn(className)} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className={cn(
+        // Example responsive Tailwind sizes
+        'h-[267px] w-[200px] md:h-[334px] md:w-[250px] xl:h-[400px] xl:w-[300px] 2xl:h-[480px] 2xl:w-[360px]',
+        className
+      )}
+    />
+  );
 };
 
 export default PixelatedImage;

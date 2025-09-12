@@ -6,7 +6,15 @@ const CalEmbed = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: '30-min-meeting' });
-      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+      cal('ui', {
+        theme: 'dark',
+        cssVarsPerTheme: {
+          light: { 'cal-brand': '#0a0a0a' },
+          dark: { 'cal-brand': '#e5e5e5' },
+        },
+        hideEventTypeDetails: false,
+        layout: 'month_view',
+      });
     })();
   }, []);
   return (

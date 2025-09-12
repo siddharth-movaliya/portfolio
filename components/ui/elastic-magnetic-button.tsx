@@ -186,7 +186,7 @@ const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        'group relative flex h-52 w-52 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-red-400 font-bold text-white select-none',
+        'group relative flex size-36 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-red-400 font-bold text-white select-none lg:size-40 xl:size-48 2xl:size-52',
         buttonClassName
       )}
     >
@@ -194,7 +194,7 @@ const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
       <span
         ref={bgRef}
         className={cn(
-          'absolute size-64 rounded-full',
+          'absolute size-48 rounded-full lg:size-54 xl:size-60 2xl:size-64',
           hoverBackgroundClassName
         )}
         style={{ transform: 'translateY(100%)' }} // start hidden at bottom

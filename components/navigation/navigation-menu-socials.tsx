@@ -6,12 +6,12 @@ import Link from 'next/link';
 
 const NavigationMenuSocials = () => {
   return (
-    <div className="fixed top-5/6 right-1/16 flex w-1/2 rotate-90 flex-col items-start justify-start gap-4 bg-white text-left text-xl font-light">
+    <div className="mx-auto flex h-full flex-col justify-center gap-4 bg-white text-xl font-light min-[1367px]:bottom-16 xl:right-1/6 xl:max-[1367px]:top-7/8 2xl:top-5/6 2xl:right-1/16">
       <Link href="tel:+15157661643">515-766-1643</Link>
       <Link href="mailto:movaliyasiddharth23@gmail.com">
         movaliyasiddharth23@gmail.com
       </Link>
-      <div className="mt-28 flex gap-4">
+      <div className="flex gap-4 xl:mt-12 2xl:mt-18">
         <MagneticButton>
           <Link
             href={'https://www.instagram.com/siddharth_2382/'}

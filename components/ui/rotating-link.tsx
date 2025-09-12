@@ -29,7 +29,7 @@ const RotatingLink = ({
       target={target}
     >
       <div className={cn('nav-link-unrotated', bodoni.className)}>{text}</div>
-      <div className="nav-link-rotated">{text}</div>
+      <div className="nav-link-rotated relative!">{text}</div>
     </a>
   );
 };

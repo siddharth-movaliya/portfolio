@@ -25,10 +25,7 @@ const AboutMeButton = () => {
   }, []);
 
   return (
-    <div
-      ref={buttonRef}
-      className="about-btn-wrapper right-24 grid grid-cols-10"
-    >
+    <div ref={buttonRef} className="about-btn-wrapper grid grid-cols-10">
       <ElasticMagneticButton
         text="About Me"
         buttonClassName="col-start-7 bg-background text-foreground"

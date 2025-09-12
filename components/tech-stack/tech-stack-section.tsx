@@ -124,12 +124,12 @@ const TechStackSection = () => {
 
   return (
     <div
-      className="relative flex flex-col justify-between p-12"
+      className="relative flex flex-col justify-between px-6 py-12 md:p-12"
       ref={containerRef}
     >
       <h1
         ref={headingRef}
-        className="relative text-center text-[200px] leading-none font-semibold uppercase"
+        className="relative text-center text-8xl leading-none font-semibold uppercase xl:text-[160px] 2xl:text-[200px]"
       >
         Tech Stack
       </h1>
@@ -139,7 +139,7 @@ const TechStackSection = () => {
         className="bg-foreground pointer-events-none absolute z-0 p-1 transition-all duration-300"
         style={hoverStyle || {}}
       />
-      <div className="relative mt-20">
+      <div className="relative mt-12 md:mt-0 xl:mt-12 2xl:mt-20">
         <p className="mb-6 text-lg font-semibold uppercase">Professional at</p>
 
         {/* Top row */}
@@ -154,12 +154,12 @@ const TechStackSection = () => {
               role="button"
               tabIndex={0}
               onClick={() => handleClick(key)}
-              className={`flex h-80 cursor-pointer items-center justify-center transition-all duration-300 ease-in-out ${
+              className={`xs:h-36 flex h-30 cursor-pointer items-center justify-center transition-all duration-300 ease-in-out md:h-56 xl:h-64 2xl:h-80 ${
                 topHoverIndex === idx ? 'text-background' : ''
               } ${idx !== 0 ? 'border-ring border-l' : ''}`}
               onMouseEnter={(e) => handleMouseEnter(idx, true, e)}
             >
-              <Icon className="size-20" />
+              <Icon className="xs:size-16 size-12 xl:size-18 2xl:size-20" />
             </div>
           ))}
         </div>
@@ -177,12 +177,12 @@ const TechStackSection = () => {
               role="button"
               tabIndex={0}
               onClick={() => handleClick(key)}
-              className={`flex h-64 cursor-pointer items-center justify-center transition-all duration-300 ease-in-out ${
+              className={`xs:h-16 flex h-12 cursor-pointer items-center justify-center transition-all duration-300 ease-in-out md:h-36 xl:h-52 2xl:h-64 ${
                 bottomHoverIndex === idx ? 'text-background' : ''
               } ${idx !== 0 ? 'border-ring border-l' : ''}`}
               onMouseEnter={(e) => handleMouseEnter(idx, false, e)}
             >
-              <Icon className="size-16" />
+              <Icon className="xs:size-8 size-6 md:size-12 xl:size-14 2xl:size-16" />
             </div>
           ))}
         </div>

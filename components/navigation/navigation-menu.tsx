@@ -23,14 +23,14 @@ const NavigationMenu = () => {
           isMenuOpen ? 'translate-y-0' : 'translate-y-[-140%] delay-300'
         }`}
       >
-        <div className="nav-link-wrapper relative flex h-full w-full items-center justify-center">
-          <div className="flex h-[100vw] w-[100vh] -rotate-90 flex-col text-9xl font-extralight">
+        <div className="flex h-full flex-col text-7xl font-light md:flex-row md:items-end md:text-9xl 2xl:text-[156px]">
+          <div className="group mt-32 flex h-1/3 w-full flex-col justify-center overflow-hidden md:mt-0 md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
             <a
               className={cn(
-                'group my-22 px-16 transition-all duration-1000 ease-in-out [perspective:1000px]',
+                'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
                   ? 'translate-0 opacity-100 delay-300'
-                  : 'translate-x-18 opacity-0 delay-300'
+                  : '-translate-y-18 opacity-0 delay-300'
               )}
               href="#"
             >
@@ -39,38 +39,20 @@ const NavigationMenu = () => {
               </div>
               <div className="nav-link-rotated">Home</div>
             </a>
-            <div
-              className={cn(
-                'bg-foreground h-0.5 w-full translate-x-full transition-transform duration-800 ease-in-out',
-                isMenuOpen ? 'translate-0 delay-300' : 'delay-300'
-              )}
-            ></div>
+          </div>
+          <div
+            className={cn(
+              'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',
+              isMenuOpen ? 'translate-0 delay-300' : 'delay-300'
+            )}
+          ></div>
+          <div className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
             <a
               className={cn(
-                'group my-22 px-16 transition-all duration-1000 ease-in-out [perspective:1000px]',
+                'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
                   ? 'translate-0 opacity-100 delay-400'
-                  : 'translate-x-18 opacity-0 delay-200'
-              )}
-              href="#"
-            >
-              <div className={cn('nav-link-unrotated', bodoni.className)}>
-                Projects
-              </div>
-              <div className="nav-link-rotated">Projects</div>
-            </a>
-            <div
-              className={cn(
-                'bg-foreground h-0.5 w-full translate-x-full transition-transform duration-800 ease-in-out',
-                isMenuOpen ? 'translate-0 delay-400' : 'delay-200'
-              )}
-            ></div>
-            <a
-              className={cn(
-                'group my-22 px-16 transition-all duration-1000 ease-in-out [perspective:1000px]',
-                isMenuOpen
-                  ? 'translate-0 opacity-100 delay-500'
-                  : 'translate-x-18 opacity-0 delay-100'
+                  : '-translate-y-18 opacity-0 delay-200'
               )}
               href="#"
             >
@@ -79,18 +61,20 @@ const NavigationMenu = () => {
               </div>
               <div className="nav-link-rotated">About</div>
             </a>
-            <div
-              className={cn(
-                'bg-foreground h-0.5 w-full translate-x-full transition-transform duration-800 ease-in-out',
-                isMenuOpen ? 'translate-0 delay-500' : 'delay-100'
-              )}
-            ></div>
+          </div>
+          <div
+            className={cn(
+              'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',
+              isMenuOpen ? 'translate-0 delay-400' : 'delay-200'
+            )}
+          ></div>
+          <div className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
             <a
               className={cn(
-                'group my-22 px-16 transition-all duration-1000 ease-in-out [perspective:1000px]',
+                'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
-                  ? 'translate-0 opacity-100 delay-600'
-                  : 'translate-x-18 opacity-0 delay-0'
+                  ? 'translate-0 opacity-100 delay-500'
+                  : '-translate-y-18 opacity-0 delay-100'
               )}
               href="#"
             >
@@ -99,14 +83,14 @@ const NavigationMenu = () => {
               </div>
               <div className="nav-link-rotated">Contact</div>
             </a>
-            <div
-              className={cn(
-                'bg-foreground h-0.5 w-full translate-x-full transition-transform duration-800 ease-in-out',
-                isMenuOpen ? 'translate-0 delay-600' : 'delay-0'
-              )}
-            ></div>
-            <NavigationMenuSocials />
           </div>
+          <div
+            className={cn(
+              'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',
+              isMenuOpen ? 'translate-0 delay-500' : 'delay-100'
+            )}
+          ></div>
+          <NavigationMenuSocials />
         </div>
         <Image
           className={cn(
