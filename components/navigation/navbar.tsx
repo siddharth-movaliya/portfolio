@@ -1,10 +1,23 @@
+import Link from 'next/link';
 import React from 'react';
 
-const NavBar = ({ toggleMenu }: { toggleMenu: () => void }) => {
+const NavBar = ({
+  toggleMenu,
+  isMenuOpen,
+}: {
+  toggleMenu: () => void;
+  isMenuOpen: boolean;
+}) => {
   return (
     <div className="group pointer-events-none fixed top-0 z-999 flex w-full justify-between p-6 text-2xl font-light text-white uppercase mix-blend-difference lg:text-3xl xl:text-4xl 2xl:text-5xl">
       {/* Nav Icon */}
-      <div className="pointer-events-auto z-999 flex cursor-pointer flex-col">
+      <Link
+        href="/"
+        onClick={() => {
+          if (isMenuOpen) toggleMenu();
+        }}
+        className="pointer-events-auto z-999 flex cursor-pointer flex-col"
+      >
         <div className="flex">
           <span>S</span>
           <div className="flex overflow-hidden">
@@ -60,7 +73,7 @@ const NavBar = ({ toggleMenu }: { toggleMenu: () => void }) => {
             </span>
           </div>
         </div>
-      </div>
+      </Link>
       {/* Nav Menu */}
       <div
         className="pointer-events-auto z-999 flex h-fit cursor-pointer"

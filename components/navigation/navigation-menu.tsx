@@ -18,7 +18,10 @@ const NavigationMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <NavBar toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
+      <NavBar
+        isMenuOpen={isMenuOpen}
+        toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+      />
       <nav
         className={`fixed top-0 left-0 z-100 h-full w-full overflow-visible bg-white transition-all duration-1500 ease-in-out ${
           isMenuOpen ? 'translate-y-0' : 'translate-y-[-140%] delay-300'
