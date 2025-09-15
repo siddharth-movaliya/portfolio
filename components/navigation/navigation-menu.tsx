@@ -6,6 +6,7 @@ import NavBar from './navbar';
 import navImgBg from '@/public/nav-bg-img.svg';
 import NavigationMenuSocials from './navigation-menu-socials';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -24,66 +25,75 @@ const NavigationMenu = () => {
         }`}
       >
         <div className="flex h-full flex-col text-7xl font-light md:flex-row md:items-end md:text-9xl 2xl:text-[156px]">
-          <div className="group mt-32 flex h-1/3 w-full flex-col justify-center overflow-hidden md:mt-0 md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
-            <a
+          <Link
+            href="/"
+            className="group mt-32 flex h-1/3 w-full flex-col justify-center overflow-hidden md:mt-0 md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <div
               className={cn(
                 'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
                   ? 'translate-0 opacity-100 delay-300'
                   : '-translate-y-18 opacity-0 delay-300'
               )}
-              href="#"
             >
               <div className={cn('nav-link-unrotated', bodoni.className)}>
                 Home
               </div>
               <div className="nav-link-rotated">Home</div>
-            </a>
-          </div>
+            </div>
+          </Link>
           <div
             className={cn(
               'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',
               isMenuOpen ? 'translate-0 delay-300' : 'delay-300'
             )}
           ></div>
-          <div className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
-            <a
+          <Link
+            href="/about"
+            className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <div
               className={cn(
                 'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
                   ? 'translate-0 opacity-100 delay-400'
                   : '-translate-y-18 opacity-0 delay-200'
               )}
-              href="#"
             >
               <div className={cn('nav-link-unrotated', bodoni.className)}>
                 About
               </div>
               <div className="nav-link-rotated">About</div>
-            </a>
-          </div>
+            </div>
+          </Link>
           <div
             className={cn(
               'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',
               isMenuOpen ? 'translate-0 delay-400' : 'delay-200'
             )}
           ></div>
-          <div className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16">
-            <a
+          <Link
+            href="/contact"
+            className="group flex h-1/3 w-full flex-col justify-center overflow-hidden md:h-full md:w-2/11 md:items-center md:justify-end md:pb-16"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <div
               className={cn(
                 'flex items-center justify-center transition-all duration-1000 ease-in-out [perspective:1000px] md:-rotate-90 md:justify-start',
                 isMenuOpen
                   ? 'translate-0 opacity-100 delay-500'
                   : '-translate-y-18 opacity-0 delay-100'
               )}
-              href="#"
             >
               <div className={cn('nav-link-unrotated', bodoni.className)}>
                 Contact
               </div>
               <div className="nav-link-rotated">Contact</div>
-            </a>
-          </div>
+            </div>
+          </Link>
           <div
             className={cn(
               'bg-foreground h-0.5 w-full -translate-y-full transition-transform duration-800 ease-in-out md:h-full md:w-0.5',

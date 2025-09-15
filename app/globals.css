@@ -173,6 +173,10 @@
     @apply z-8 mask-linear-[to_bottom,rgba(0,0,0,0)_87.5%,rgba(0,0,0,1)_100%] backdrop-blur-[16px];
   }
 
+  .top-shadow-lg {
+    @apply shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1),0_-4px_6px_-4px_rgba(0,0,0,0.1)];
+  }
+
   @keyframes spinReverse {
     from {
       transform: rotate(0deg);

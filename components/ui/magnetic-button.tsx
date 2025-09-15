@@ -1,5 +1,5 @@
+'use client';
 import { useState, useRef } from 'react';
-import { FaInstagram } from 'react-icons/fa';
 
 const MagneticButton = ({ children }: { children: React.ReactNode }) => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
