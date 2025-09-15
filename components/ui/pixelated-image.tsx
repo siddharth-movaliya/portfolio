@@ -34,10 +34,14 @@ const PixelatedImage = ({
       const w = rect.width;
       const h = rect.height;
 
+      // Guard: skip if canvas is not visible or has no size
+      if (w === 0 || h === 0) return;
+
       // Retina scaling
       const dpr = window.devicePixelRatio || 1;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform before scaling
       ctx.scale(dpr, dpr);
 
       drawPixelated(ctx, imgRef.current, w, h, 45);
@@ -50,8 +54,14 @@ const PixelatedImage = ({
       h: number,
       blockSize: number
     ) {
+      // Guard: skip if width or height is 0
+      if (w === 0 || h === 0) return;
+
       const smallW = Math.ceil(w / blockSize);
       const smallH = Math.ceil(h / blockSize);
+
+      // Guard: skip if offscreen canvas would be 0
+      if (smallW === 0 || smallH === 0) return;
 
       const offCanvas = document.createElement('canvas');
       offCanvas.width = smallW;
