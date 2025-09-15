@@ -1,21 +1,15 @@
 import React from 'react';
 import MarqueeText from '@/components/contact/marquee-text';
-import WorkBgBubble from '@/components/work/work-bg-bubble';
 import MagneticButton from '@/components/ui/magnetic-button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import { RiTwitterXFill } from 'react-icons/ri';
 import CalEmbed from '@/components/footer/cal-embed';
-import NavigationMenu from '@/components/navigation/navigation-menu';
 import BookACallButton from '@/components/ui/book-a-call-button';
 
 const ContactPage = () => {
   return (
     <div className="h-screen justify-center overflow-x-hidden pt-28 lg:pt-32 xl:max-h-screen xl:overflow-hidden portrait:max-h-screen portrait:overflow-hidden">
-      {/* <div className="w-full">
-        <NavigationMenu />
-      </div> */}
-
       <div className="relative w-full overflow-hidden">
         <MarqueeText />
       </div>
