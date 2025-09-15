@@ -11,10 +11,10 @@ import BookACallButton from '@/components/ui/book-a-call-button';
 
 const ContactPage = () => {
   return (
-    <div className="h-screen justify-center overflow-x-hidden xl:max-h-screen xl:overflow-hidden portrait:max-h-screen portrait:overflow-hidden">
-      <div className="w-full">
+    <div className="h-screen justify-center overflow-x-hidden pt-28 lg:pt-32 xl:max-h-screen xl:overflow-hidden portrait:max-h-screen portrait:overflow-hidden">
+      {/* <div className="w-full">
         <NavigationMenu />
-      </div>
+      </div> */}
 
       <div className="relative w-full overflow-hidden">
         <MarqueeText />

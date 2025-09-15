@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavBar = ({ toggleMenu }: { toggleMenu: () => void }) => {
   return (
-    <div className="group pointer-events-none sticky top-6 z-999 m-6 flex justify-between text-2xl font-light text-white uppercase mix-blend-difference lg:text-3xl xl:text-4xl 2xl:text-5xl">
+    <div className="group pointer-events-none fixed top-0 z-999 flex w-full justify-between p-6 text-2xl font-light text-white uppercase mix-blend-difference lg:text-3xl xl:text-4xl 2xl:text-5xl">
       {/* Nav Icon */}
       <div className="pointer-events-auto z-999 flex cursor-pointer flex-col">
         <div className="flex">
