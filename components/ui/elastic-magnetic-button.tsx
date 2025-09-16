@@ -1,9 +1,12 @@
 'use client';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 interface ElasticMagneticButtonProps {
   text?: string;
+  href: string;
+  target?: string;
   buttonClassName?: string;
   textClassName?: string;
   hoverBackgroundClassName?: string;
@@ -11,11 +14,13 @@ interface ElasticMagneticButtonProps {
 
 const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
   text,
+  href,
+  target,
   buttonClassName,
   textClassName,
   hoverBackgroundClassName,
 }) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const anchorRef = useRef<HTMLAnchorElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const bgRef = useRef<HTMLSpanElement>(null);
   const didMountRef = useRef(false);
@@ -36,9 +41,9 @@ const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
   const textSnapFactor = 0.04;
 
   useEffect(() => {
-    if (!buttonRef.current || !textRef.current) return;
+    if (!anchorRef.current || !textRef.current) return;
 
-    const button = buttonRef.current;
+    const button = anchorRef.current;
     const text = textRef.current;
 
     // reset transforms on mount
@@ -181,8 +186,10 @@ const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
   }, [hovered]);
 
   return (
-    <button
-      ref={buttonRef}
+    <Link
+      href={href}
+      target={target}
+      ref={anchorRef}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
@@ -207,7 +214,7 @@ const ElasticMagneticButton: React.FC<ElasticMagneticButtonProps> = ({
       >
         {text}
       </span>
-    </button>
+    </Link>
   );
 };
 

@@ -28,6 +28,7 @@ const AboutMeButton = () => {
     <div ref={buttonRef} className="about-btn-wrapper grid grid-cols-10">
       <ElasticMagneticButton
         text="About Me"
+        href="/about"
         buttonClassName="col-start-7 bg-background text-foreground"
         textClassName="font-medium text-xl"
         hoverBackgroundClassName="bg-[#455CE9]"
