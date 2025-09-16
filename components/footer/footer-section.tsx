@@ -4,7 +4,10 @@ import { cn } from '@/lib/utils';
 import CalEmbed from './cal-embed';
 import FooterBento from './footer-bento';
 import FooterName from './footer-name';
-import BookACallButton from '../ui/animated-button';
+import AnimatedButton from '../ui/animated-button';
+import { BiCalendar } from 'react-icons/bi';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -26,7 +29,19 @@ const FooterSection = () => {
             </p>
           </div>
           <div className="mx-6 grid grid-cols-2 md:hidden">
-            <BookACallButton />
+            <AnimatedButton
+              className="top-shadow-lg"
+              iconLeft={BiCalendar}
+              iconRight={ArrowUpRight}
+            >
+              <Link
+                href="https://cal.com/siddharth-movaliya/30-min-meeting"
+                target="_blank"
+                className="pr-0 pl-4 transition-all group-hover:translate-x-0 group-hover:pr-4 group-hover:pl-0"
+              >
+                Book a Call
+              </Link>
+            </AnimatedButton>
           </div>
         </div>
         <div className="hidden min-w-[772px] scale-90 justify-center md:flex lg:mx-24 lg:min-h-[570px] lg:scale-100 xl:mx-0">
