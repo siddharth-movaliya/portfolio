@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import { RiTwitterXFill } from 'react-icons/ri';
 import CalEmbed from '@/components/footer/cal-embed';
-import BookACallButton from '@/components/ui/animated-button';
+import AnimatedButton from '@/components/ui/animated-button';
+import { ArrowUpRight } from 'lucide-react';
+import { BiCalendar } from 'react-icons/bi';
 
 const ContactPage = () => {
   return (
@@ -16,7 +18,19 @@ const ContactPage = () => {
 
       <div className="text-background relative flex h-fit w-full flex-col justify-center md:justify-start xl:h-full portrait:h-full landscape:sm:max-md:h-1/2 landscape:sm:max-md:justify-end">
         <div className="absolute top-12 flex w-screen scale-125 justify-center md:hidden">
-          <BookACallButton className="top-shadow-lg" />
+          <AnimatedButton
+            className="top-shadow-lg"
+            iconLeft={BiCalendar}
+            iconRight={ArrowUpRight}
+          >
+            <Link
+              href="https://cal.com/siddharth-movaliya/30-min-meeting"
+              target="_blank"
+              className="pr-0 pl-4 transition-all group-hover:translate-x-0 group-hover:pr-4 group-hover:pl-0"
+            >
+              Book a Call
+            </Link>
+          </AnimatedButton>
         </div>
         <div className="flex justify-center">
           <div className="after:bg-foreground items-center justify-between after:absolute after:top-16 after:left-1/2 after:-z-10 after:h-full after:w-[200vw] after:-translate-x-1/2 after:rounded-t-[50%] after:content-[''] min-[1367px]:flex md:after:w-[135vw] lg:mx-16 2xl:mx-24 2xl:min-w-[1536px]">
