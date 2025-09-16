@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import { RiTwitterXFill } from 'react-icons/ri';
 import CalEmbed from '@/components/footer/cal-embed';
-import BookACallButton from '@/components/ui/book-a-call-button';
+import BookACallButton from '@/components/ui/animated-button';
 
 const ContactPage = () => {
   return (

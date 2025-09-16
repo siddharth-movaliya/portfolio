@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import CalEmbed from './cal-embed';
 import FooterBento from './footer-bento';
 import FooterName from './footer-name';
-import BookACallButton from '../ui/book-a-call-button';
+import BookACallButton from '../ui/animated-button';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],

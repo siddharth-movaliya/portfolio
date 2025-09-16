@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { BiFile } from 'react-icons/bi';
-import { Check, Mail } from 'lucide-react';
+import { Check, Download, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 import { MdCopyAll } from 'react-icons/md';
 import { toast } from 'sonner';
-import BookACallButton from '../ui/book-a-call-button';
+import AnimatedButton from '../ui/animated-button';
 
 const FooterBento = () => {
   const [copied, setCopied] = useState(false);
@@ -22,7 +22,7 @@ const FooterBento = () => {
   return (
     <div className="my-8 flex justify-center 2xl:my-16">
       <div className="mx-6 grid grid-cols-3 grid-rows-6 gap-2 md:grid-cols-7 md:grid-rows-3 lg:mx-16 lg:gap-3 xl:w-2/3">
-        <div className="border-ring/30 col-span-3 row-span-3 flex w-full flex-col justify-between rounded-2xl border p-8 md:col-span-4 md:row-span-3">
+        <div className="border-ring/30 col-span-3 row-span-3 flex w-full flex-col justify-between rounded-2xl border p-5 md:col-span-4 md:row-span-3 lg:p-8">
           <div>
             <Image
               src="/siddharth-movaliya.JPG"
@@ -31,7 +31,7 @@ const FooterBento = () => {
               width={100}
               height={100}
             />
-            <h1 className="text-3xl font-medium md:leading-snug xl:text-4xl 2xl:text-5xl">
+            <h1 className="xs:text-3xl text-2xl font-medium md:leading-snug xl:text-4xl 2xl:text-5xl">
               Hello 👋🏻
               <br /> I&rsquo;m Siddharth Movaliya.
             </h1>
@@ -49,17 +49,15 @@ const FooterBento = () => {
               Available for hire
             </div>
             <div className="flex gap-4">
-              <BookACallButton className="hidden md:block" />
-              {/* <Button
-                size="lg"
-                className="dark hover:bg-foreground group relative items-center overflow-hidden rounded-full hover:cursor-pointer"
-              >
-                <BiFile className="absolute left-0 translate-x-3 transition-all group-hover:-translate-x-full group-hover:opacity-100" />
-                <span className="pr-0 pl-4 transition-all group-hover:translate-x-0 group-hover:pr-4 group-hover:pl-0">
+              <AnimatedButton iconLeft={BiFile} iconRight={Download}>
+                <Link
+                  href="/resume.pdf"
+                  target="_blank"
+                  className="pr-0 pl-4 transition-all group-hover:translate-x-0 group-hover:pr-4 group-hover:pl-0"
+                >
                   My Resume
-                </span>
-                <ArrowDown className="absolute right-0 translate-x-full transition-all group-hover:-translate-x-3 group-hover:opacity-100" />
-              </Button> */}
+                </Link>
+              </AnimatedButton>
             </div>
           </div>
         </div>
